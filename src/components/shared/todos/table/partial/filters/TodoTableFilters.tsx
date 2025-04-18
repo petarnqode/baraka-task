@@ -6,7 +6,7 @@ const TodoTableFilters = () => {
   const { filters } = useAppSelector(selectFilters);
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 mt-auto">
       {filters.map((filter) => (
         <TodoTableSingleFilter filter={filter} key={filter} />
       ))}

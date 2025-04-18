@@ -5,7 +5,7 @@ import { useCallback } from "react";
 import TodoTableFilters from "@/src/components/shared/todos/table/partial/filters/TodoTableFilters";
 import MainButton from "@/src/components/buttons/MainButton";
 
-const TodoTableHeader = () => {
+const TodoTableActions = () => {
   const dispatch = useAppDispatch();
 
   const handleAddNew = useCallback(() => {
@@ -13,7 +13,7 @@ const TodoTableHeader = () => {
   }, []);
 
   return (
-    <div className="mb-6 flex gap-x-6 gap-y-4 flex-wrap">
+    <div className="w-full mb-3 flex gap-x-6 gap-y-4 flex-wrap">
       <TodoTableFilters />
       <div className="ml-auto">
         <MainButton text="Add Book" onClick={handleAddNew} />
@@ -22,4 +22,4 @@ const TodoTableHeader = () => {
   );
 };
 
-export default TodoTableHeader;
+export default TodoTableActions;

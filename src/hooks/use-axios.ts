@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "@/src/api";
+import { Nullable } from "@/src/interfaces";
 
 interface HttpProps {
   url: string;
@@ -9,7 +10,7 @@ interface HttpProps {
 }
 
 const useAxios = <T>({ url, method, body, headers }: HttpProps) => {
-  const [response, setResponse] = useState<T | null>(null);
+  const [response, setResponse] = useState<Nullable<T>>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 

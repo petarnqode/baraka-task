@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { Nullable } from "@/src/interfaces";
 import { State as AppState } from "@/src/state/store";
 import { TaskStatusEnum } from "@/src/enum";
 
