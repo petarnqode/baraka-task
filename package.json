@@ -1,0 +1,42 @@
+{
+  "name": "baraka-task",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview --port 10000"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.4",
+    "jwt-decode": "^4.0.0",
+    "lodash.get": "^4.4.2",
+    "path": "^0.12.7",
+    "postcss": "^8.4.41",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-modal": "^3.16.1",
+    "react-redux": "^9.1.2",
+    "react-toastify": "^10.0.5",
+    "reset-css": "^5.0.2",
+    "sass": "^1.77.8",
+    "tailwindcss": "^3.4.10",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-modal": "^3.16.3",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "globals": "^15.9.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.0.1",
+    "vite": "^5.4.1",
+    "vite-plugin-svgr": "^4.2.0",
+    "vite-tsconfig-paths": "^5.0.1"
+  }
+}
