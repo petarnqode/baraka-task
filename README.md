@@ -23,7 +23,6 @@ src/
 ├── components/     # Reusable UI components
 ├── enum/           # TypeScript enums
 ├── hooks/          # Custom React hooks
-├── icons/          # SVG icons
 ├── interfaces/     # TypeScript interfaces
 ├── pages/          # Page components
 ├── state/          # Redux state management
