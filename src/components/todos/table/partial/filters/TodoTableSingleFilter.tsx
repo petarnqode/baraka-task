@@ -1,12 +1,9 @@
+import { FilterType } from "@/src/interfaces";
 import {
   useAppDispatch,
   useAppSelector,
 } from "@/src/state/redux-hooks/reduxHooks";
-import {
-  FilterType,
-  selectFilters,
-  setFilter,
-} from "@/src/state/shared/filters";
+import { selectFilters, setFilter } from "@/src/state/shared/filters";
 import { useCallback } from "react";
 
 type TodoTableSingleFilterProps = {

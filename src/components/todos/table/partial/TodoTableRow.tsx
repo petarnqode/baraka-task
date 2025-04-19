@@ -25,16 +25,16 @@ const TodoTableRow = ({ todo }: TodoTableRowProps) => {
 
   return (
     <div className="grid grid-cols-4 border-b-1 border-b-light-grey-alt border-solid px-4 pb-3 pt-4 items-center">
-      <p className="font-popins text-sm text-black font-normal truncate">
+      <p className="font-poppins text-sm text-black font-normal truncate">
         {name}
       </p>
-      <p className="font-popins text-sm text-black font-normal truncate">
+      <p className="font-poppins text-sm text-black font-normal truncate">
         {dueDate.toLocaleString()}
       </p>
       <div className="pr-2">
         <TodoTableStatus status={status} />
       </div>
-      <div className="flex gap-4 font-popins text-sm text-black font-normal truncate">
+      <div className="flex gap-4 font-poppins text-sm text-black font-normal truncate">
         <Trash className="cursor-pointer" onClick={handleDelete} />
         <Check className="cursor-pointer" onClick={handleComplete} />
       </div>

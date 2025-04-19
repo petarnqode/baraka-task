@@ -2,7 +2,7 @@ import { ModalEnum } from "@/src/enum";
 import { useAppDispatch } from "@/src/state/redux-hooks/reduxHooks";
 import { setModal } from "@/src/state/shared/modals";
 import { useCallback } from "react";
-import TodoTableFilters from "@/src/components/shared/todos/table/partial/filters/TodoTableFilters";
+import TodoTableFilters from "@/src/components/todos/table/partial/filters/TodoTableFilters";
 import MainButton from "@/src/components/buttons/MainButton";
 
 const TodoTableActions = () => {

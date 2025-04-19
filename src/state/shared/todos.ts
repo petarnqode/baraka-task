@@ -5,7 +5,7 @@ import { TaskStatusEnum } from "@/src/enum";
 import {
   loadTodosFromLocalStorage,
   saveTodosToLocalStorage,
-} from "@/src/utils/localStorage";
+} from "@/src/utils/local-storage";
 
 type State = {
   todos: ITodo[];

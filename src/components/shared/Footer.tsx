@@ -1,10 +1,10 @@
-import { InfiniteLoader } from "../icons/general";
-import useAxios from "@/src/hooks/use-axios";
+import useApi from "@/src/hooks/use-api";
 import { IQuote } from "@/src/interfaces";
 import QuoteApis from "@/src/api/resources/quotes";
+import { InfiniteLoader } from "@/src/components/icons/general";
 
 const Footer = () => {
-  const { response, loading } = useAxios<IQuote>({
+  const { response, loading } = useApi<IQuote>({
     method: "get",
     url: QuoteApis.getRandomQuote(),
   });

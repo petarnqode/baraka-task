@@ -9,7 +9,7 @@ const TodoTableHeadingText = ({
 }: TodoTableHeadingProps) => {
   return (
     <p
-      className={`font-popins font-medium text-sm text-grey uppercase flex gap-x-3 ${
+      className={`font-poppins font-medium text-sm text-grey uppercase flex gap-x-3 ${
         isCenter ? "mx-auto" : ""
       }`}
     >

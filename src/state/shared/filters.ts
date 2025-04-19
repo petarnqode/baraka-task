@@ -1,8 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { State as AppState } from "@/src/state/store";
 import { TaskStatusEnum } from "@/src/enum";
-
-export type FilterType = "ALL" | TaskStatusEnum;
+import { FilterType } from "@/src/interfaces";
 
 type State = {
   filters: FilterType[];

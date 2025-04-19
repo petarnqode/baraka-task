@@ -1,6 +1,6 @@
 import { useAppSelector } from "@/src/state/redux-hooks/reduxHooks";
 import { selectFilters } from "@/src/state/shared/filters";
-import TodoTableSingleFilter from "@/src/components/shared/todos/table/partial/filters/TodoTableSingleFilter";
+import TodoTableSingleFilter from "@/src/components/todos/table/partial/filters/TodoTableSingleFilter";
 
 const TodoTableFilters = () => {
   const { filters } = useAppSelector(selectFilters);

@@ -12,9 +12,10 @@ export default defineConfig({
     tsConfigPaths(),
     svgr({ svgrOptions: { expandProps: "end" } }),
   ],
+
   build: {
-    minify: "esbuild", // Ensures minification and optimizes for production
-    sourcemap: false, // You can disable sourcemaps in production
+    minify: "esbuild",
+    sourcemap: false,
   },
   server: {
     host: "0.0.0.0",
@@ -24,5 +25,10 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./"),
     },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/tests/setup.ts",
   },
 });

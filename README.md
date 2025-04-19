@@ -1,50 +1,92 @@
-# React + TypeScript + Vite
+# Book Reading Todo Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project is a Book Reading Todo application that helps users track books they want to read, are currently reading, or have completed. Built with React and Redux, it demonstrates modern frontend development practices and provides a clean, intuitive user interface for managing your reading list.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+### Functional Requirements
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Add Books: Users can add new books to their reading list with details like title, author, and pages.
+- Track Progress: Users can update their reading progress and mark books as "Want to Read", "Currently Reading", or "Completed".
+- Book Details: Users can view and edit detailed information about each book.
+- Filter Books: Users can filter books by reading status.
+- Search: Users can search for books in their collection.
+- Persistent Storage: Reading lists are saved in local storage to persist data across page refreshes.
+- Responsive Design: Works seamlessly across desktop and mobile devices.
 
-- Configure the top-level `parserOptions` property like this:
+## Project Structure
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+The project is organized as follows:
+
+```
+src/
+├── api/            # API service layer
+├── components/     # Reusable UI components
+├── enum/           # TypeScript enums
+├── hooks/          # Custom React hooks
+├── icons/          # SVG icons
+├── interfaces/     # TypeScript interfaces
+├── pages/          # Page components
+├── state/          # Redux state management
+├── styles/         # Global styles and themes
+├── tests/          # Test configurations and files
+├── utils/          # Utility functions
+├── App.tsx         # Main application component
+├── main.tsx        # Entry point
+public/             # Static files
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Technology Stack
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- React 18
+- TypeScript
+- Redux Toolkit
+- TailwindCSS
+- Vite
+- Vitest for testing
+- React Modal
+- React Toastify
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16+)
+- pnpm (recommended) or npm
+
+### Installation
+
+1. Clone the repository
+
+   ```
+   git clone https://github.com/petarnqode/baraka-task
+   cd baraka-task
+   ```
+
+2. Install dependencies
+
+   ```
+   pnpm install
+   ```
+
+3. Start the development server
+
+   ```
+   pnpm dev
+   ```
+
+4. Open http://172.20.10.2:5200/ in your browser
+
+### Building for Production
+
+```
+pnpm build
+```
+
+### Running Tests
+
+```
+pnpm test
 ```
