@@ -1,9 +1,10 @@
 import { ITodo } from "@/src/interfaces";
 import TodoTableStatus from "./TodoTableStatus";
-import { Check, Trash } from "@/src/components/icons/general";
+import { Check, Cross, Trash } from "@/src/components/icons/general";
 import { useAppDispatch } from "@/src/state/redux-hooks/reduxHooks";
 import { removeTodoById, setTodoStatus } from "@/src/state/shared/todos";
 import customToast from "@/src/components/shared/Toast";
+import { TaskStatusEnum } from "@/src/enum";
 
 type TodoTableRowProps = {
   todo: ITodo;
@@ -36,7 +37,12 @@ const TodoTableRow = ({ todo }: TodoTableRowProps) => {
       </div>
       <div className="flex gap-4 font-poppins text-sm text-black font-normal truncate">
         <Trash className="cursor-pointer" onClick={handleDelete} />
-        <Check className="cursor-pointer" onClick={handleComplete} />
+
+        {status === TaskStatusEnum.ACTIVE ? (
+          <Cross className="cursor-pointer" onClick={handleComplete} />
+        ) : (
+          <Check className="cursor-pointer" onClick={handleComplete} />
+        )}
       </div>
     </div>
   );

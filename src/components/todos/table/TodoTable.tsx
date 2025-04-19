@@ -17,7 +17,7 @@ const TodoTable = () => {
   };
 
   return (
-    <div className="w-full h-full bg-white rounded-sm border-1 border-light-grey-alt border-solid px-6 pb-6 overflow-hidden">
+    <div className="w-full h-full min-h-64 bg-white rounded-sm border-1 border-light-grey-alt border-solid px-6 pb-6 overflow-hidden">
       <TodoTableHeader />
       <div className="w-full h-full bg-white overflow-y-scroll pb-[40px]">
         {filterTodos().map((todo) => (
