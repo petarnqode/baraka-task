@@ -8,13 +8,10 @@ This project is a Book Reading Todo application that helps users track books the
 
 ### Functional Requirements
 
-- Add Books: Users can add new books to their reading list with details like title, author, and pages.
-- Track Progress: Users can update their reading progress and mark books as "Want to Read", "Currently Reading", or "Completed".
-- Book Details: Users can view and edit detailed information about each book.
+- Add Books: Users can add new books to their reading list with details like title.
+- Track Progress: Users can update their reading progress and mark books as "Active, or "Completed".
 - Filter Books: Users can filter books by reading status.
-- Search: Users can search for books in their collection.
 - Persistent Storage: Reading lists are saved in local storage to persist data across page refreshes.
-- Responsive Design: Works seamlessly across desktop and mobile devices.
 
 ## Project Structure
 
