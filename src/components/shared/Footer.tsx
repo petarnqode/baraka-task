@@ -1,6 +1,6 @@
 import useApi from "@/src/hooks/use-api";
 import { IQuote } from "@/src/interfaces";
-import QuoteApis from "@/src/api/resources/quotes";
+import QuoteApis from "@/src/api/quotes";
 import { InfiniteLoader } from "@/src/components/icons/general";
 
 const Footer = () => {

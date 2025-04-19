@@ -74,7 +74,7 @@ public/             # Static files
    pnpm dev
    ```
 
-4. Open http://172.20.10.2:5200/ in your browser
+4. Open http://172.20.10.2:5200/ or http://localhost:5200/ in your browser
 
 ### Building for Production
 
