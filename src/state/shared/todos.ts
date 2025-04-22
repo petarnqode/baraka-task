@@ -3,16 +3,18 @@ import { State as AppState } from "@/src/state/store";
 import { ITodo } from "@/src/interfaces";
 import { TaskStatusEnum } from "@/src/enum";
 import {
-  loadTodosFromLocalStorage,
-  saveTodosToLocalStorage,
+  loadFromLocalStorage,
+  saveToLocalStorage,
 } from "@/src/utils/local-storage";
+
+const LOCAL_STORAGE_KEY = "todos";
 
 type State = {
   todos: ITodo[];
 };
 
 const initialState: State = {
-  todos: loadTodosFromLocalStorage(),
+  todos: loadFromLocalStorage(LOCAL_STORAGE_KEY) || [],
 };
 
 const todoSlice = createSlice({
@@ -20,23 +22,23 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     initializeTodos: () => {
-      const restored = loadTodosFromLocalStorage();
-      return { todos: restored };
+      const restored = loadFromLocalStorage(LOCAL_STORAGE_KEY);
+      return { todos: restored || [] };
     },
 
     setTodos: (state, action: PayloadAction<ITodo[]>) => {
       state.todos = action.payload;
-      saveTodosToLocalStorage(state.todos);
+      saveToLocalStorage(LOCAL_STORAGE_KEY, state.todos);
     },
 
     addNewTodo: (state, action: PayloadAction<ITodo>) => {
       state.todos = [...state.todos, action.payload];
-      saveTodosToLocalStorage(state.todos);
+      saveToLocalStorage(LOCAL_STORAGE_KEY, state.todos);
     },
 
     removeTodoById: (state, action: PayloadAction<string>) => {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
-      saveTodosToLocalStorage(state.todos);
+      saveToLocalStorage(LOCAL_STORAGE_KEY, state.todos);
     },
 
     setTodoStatus: (state, action: PayloadAction<string>) => {
@@ -51,7 +53,7 @@ const todoSlice = createSlice({
 
         return todo;
       });
-      saveTodosToLocalStorage(state.todos);
+      saveToLocalStorage(LOCAL_STORAGE_KEY, state.todos);
     },
   },
 });

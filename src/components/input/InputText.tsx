@@ -29,7 +29,7 @@ const InputText = ({
         name={name}
         type="text"
         placeholder={placeholder}
-        className="font-poppins bg-white border-1 border-grey border-solid text-sm text-black placeholder:text-text-grey py-3.5 px-4 focus:ring-green focus:border-green focus:outline-none focus-visible:ring-green block w-full rounded-xs-plus "
+        className="font-poppins bg-white border-1 border-grey border-solid text-sm text-black placeholder:text-text-grey py-3.5 px-4 focus:ring-green focus:border-green focus:outline-none focus-visible:ring-green block w-full rounded-xs"
       />
     </div>
   );

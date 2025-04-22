@@ -7,6 +7,7 @@ const TodoList = () => {
       <p className="font-poppins font-normal text-base text-grey uppercase flex gap-x-3 items-center mb-3">
         Books to read
       </p>
+
       <TodoTableActions />
 
       <TodoTable />

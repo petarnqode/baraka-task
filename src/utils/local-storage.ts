@@ -1,17 +1,15 @@
-const LOCAL_STORAGE_KEY = "todos";
-
-export const saveTodosToLocalStorage = (todos: any) => {
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+export const saveToLocalStorage = (key: string, data: any) => {
+  localStorage.setItem(key, JSON.stringify(data));
 };
 
-export const loadTodosFromLocalStorage = () => {
-  const data = localStorage.getItem(LOCAL_STORAGE_KEY);
+export const loadFromLocalStorage = (key: string) => {
+  const data = localStorage.getItem(key);
   if (data) {
     try {
       return JSON.parse(data);
     } catch (e) {
-      console.error("Failed to parse todos from localStorage", e);
+      console.error("Failed to parse data from localStorage", e);
     }
   }
-  return [];
+  return null;
 };

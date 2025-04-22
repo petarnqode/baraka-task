@@ -1,14 +1,11 @@
-import Header from "@/src/components/shared/Header";
-import Footer from "@/src/components/shared/Footer";
 import TodoList from "@/src/components/todos/TodoList";
+import MainLayout from "@/src/layout/MainLayout";
 
 const LandingPage = () => {
   return (
-    <>
-      <Header />
+    <MainLayout>
       <TodoList />
-      <Footer />
-    </>
+    </MainLayout>
   );
 };
 

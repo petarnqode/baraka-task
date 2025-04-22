@@ -1,10 +1,9 @@
+import { Trash } from "@/src/components/icons/general";
+import customToast from "@/src/components/shared/Toast";
 import { ITodo } from "@/src/interfaces";
-import TodoTableStatus from "./TodoTableStatus";
-import { Check, Cross, Trash } from "@/src/components/icons/general";
 import { useAppDispatch } from "@/src/state/redux-hooks/reduxHooks";
 import { removeTodoById, setTodoStatus } from "@/src/state/shared/todos";
-import customToast from "@/src/components/shared/Toast";
-import { TaskStatusEnum } from "@/src/enum";
+import TodoTableStatus from "./TodoTableStatus";
 
 type TodoTableRowProps = {
   todo: ITodo;
@@ -14,7 +13,7 @@ const TodoTableRow = ({ todo }: TodoTableRowProps) => {
   const { dueDate, name, status, id } = todo;
   const dispatch = useAppDispatch();
 
-  const handleComplete = () => {
+  const handleUpdateStatus = () => {
     dispatch(setTodoStatus(id));
     customToast.warning("Book is updated");
   };
@@ -33,16 +32,10 @@ const TodoTableRow = ({ todo }: TodoTableRowProps) => {
         {dueDate.toLocaleString()}
       </p>
       <div className="pr-2">
-        <TodoTableStatus status={status} />
+        <TodoTableStatus status={status} onClick={handleUpdateStatus} />
       </div>
       <div className="flex gap-4 font-poppins text-sm text-black font-normal truncate">
         <Trash className="cursor-pointer" onClick={handleDelete} />
-
-        {status === TaskStatusEnum.ACTIVE ? (
-          <Cross className="cursor-pointer" onClick={handleComplete} />
-        ) : (
-          <Check className="cursor-pointer" onClick={handleComplete} />
-        )}
       </div>
     </div>
   );
