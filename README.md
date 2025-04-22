@@ -86,3 +86,11 @@ pnpm build
 ```
 pnpm test
 ```
+
+### Deployed on https://baraka-liard.vercel.app
+
+```
+Credentials:
+   email = example@email.com
+   password = 1234
+```
