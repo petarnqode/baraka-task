@@ -5,12 +5,13 @@ import { useAppDispatch } from "@/src/state/redux-hooks/reduxHooks";
 import { setUserData } from "@/src/state/shared/auth";
 import { ChangeEventHandler, useCallback, useState } from "react";
 import customToast from "@/src/components/shared/Toast";
+import { LoginUser } from "@/src/interfaces";
 
 const Login = () => {
   const dispatch = useAppDispatch();
   const [isErrorMessageShown, setIsErrorMessageShown] =
     useState<boolean>(false);
-  const [form, setForm] = useState<{ email: string; password: string }>({
+  const [form, setForm] = useState<LoginUser>({
     email: "",
     password: "",
   });

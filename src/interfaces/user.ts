@@ -4,3 +4,5 @@ export interface IUser {
   email: string;
   password: string;
 }
+
+export type LoginUser = Omit<IUser, "firstName" | "lastName">;
