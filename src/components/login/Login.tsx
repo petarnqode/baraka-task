@@ -1,12 +1,10 @@
-import InputText from "@/src/components/input/InputText";
 import MainButton from "@/src/components/buttons/MainButton";
-import { ChangeEventHandler, useCallback, useState } from "react";
-import {
-  useAppDispatch,
-  useAppSelector,
-} from "@/src/state/redux-hooks/reduxHooks";
+import InputText from "@/src/components/input/InputText";
 import { DEFAULT_USER } from "@/src/constants/user";
-import { selectAuthUser, setUserData } from "@/src/state/shared/auth";
+import { useAppDispatch } from "@/src/state/redux-hooks/reduxHooks";
+import { setUserData } from "@/src/state/shared/auth";
+import { ChangeEventHandler, useCallback, useState } from "react";
+import customToast from "@/src/components/shared/Toast";
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -33,8 +31,10 @@ const Login = () => {
       form.password === DEFAULT_USER.password
     ) {
       dispatch(setUserData(DEFAULT_USER));
+      customToast.success("Welcome");
     } else {
       setIsErrorMessageShown(true);
+      customToast.error("Wrong credentials");
     }
   }, [form]);
 
